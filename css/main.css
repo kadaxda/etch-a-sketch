@@ -1,0 +1,57 @@
+body {
+    padding: 0;
+    margin: 0;   
+    background-image: url("watercolour-1321645_1920.jpg");
+    background-size: cover;
+    font-family: sans-serif;
+}
+:root {
+    --height: 30px;
+    --width: 30px;
+}
+
+
+.outerborder {
+    border: 1px solid rgb(189, 189, 189);
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    
+}
+
+
+.container {
+    border: 5px solid rgb(255, 255, 255);
+    width: 480px;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+       
+}
+
+input[type="button"] {
+   width: auto;
+   margin-top: 3em;
+   margin-bottom: 2em;
+    border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 2em;
+       
+}
+
+.box {
+    
+    margin: 0;
+    padding: 0px;
+    width: var(--width);
+    height: var(--height);
+    
+}
+
+.active {
+    background-color: rgb(233, 233, 248);
+}

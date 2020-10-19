@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="outerborder">
+    <div class="signature">by kadaxda</div>
+    <input id="Button" type="button" value="Clear and Create">
+    <div class="container"></div>
+</div>
+
+
+    <script>
+        let container = document.querySelector(".container")
+        
+        let div = "";
+        let button = document.querySelector("#Button")
+
+        
+        function createBoxes(num) {
+            if(num<100) {
+                for(let i = 1; i <= num*num; i++) {
+                div = document.createElement("div");
+                container.appendChild(div);
+                div.classList.add("box");
+
+            }
+            } else {
+                alert("Number too high...")
+            }
+
+            
+        }
+
+        function deleteBoxes()   {
+            boxes.forEach((box) => {
+                container.removeChild(box)
+                    
+                });
+    
+        }
+    
+        createBoxes(16);
+        let boxes = document.querySelectorAll(".box");
+
+        
+        boxes.forEach((box) => {
+            box.addEventListener("mouseenter", () => {
+                box.classList.add("active");
+                
+            });
+        });
+
+        button.addEventListener("click", () => {
+            boxes.forEach((box) => {
+                box.classList.remove("active");
+            })
+            let num = prompt("How many squred per side?")
+            deleteBoxes();
+            createBoxes(num);
+            document.documentElement.style.setProperty("--width", calcwidth(num));     
+            document.documentElement.style.setProperty("--height", calcwidth(num));     
+            boxes = document.querySelectorAll(".box");
+            boxes.forEach((box) => {
+                box.style.width = "100px;";
+                box.style.height = "100px;";
+            })
+            boxes.forEach((box) => {
+            box.addEventListener("mouseenter", () => {
+                box.classList.add("active");
+                
+            });
+        });
+        })
+        
+
+        function calcwidth(num) {
+            return (480/(num))+"px";
+        }
+        
+              
+        
+
+
+
+
+    </script>
+</body>
+</html>
