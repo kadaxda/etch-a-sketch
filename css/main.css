@@ -6,8 +6,13 @@ body {
     font-family: sans-serif;
 }
 :root {
-    --height: 30px;
-    --width: 30px;
+    --height: 22px;
+    --width: 22px;
+    --color: white;
+    --ligth: 50%;
+}
+.signature {
+    margin-top: 0.8em;;
 }
 
 
@@ -24,12 +29,12 @@ body {
 
 .container {
     border: 5px solid rgb(255, 255, 255);
-    width: 480px;
-    height: 480px;
+    width: 352px;;
+    height: 352px;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
-       
+    box-shadow: 10px 10px 20px grey;
 }
 
 input[type="button"] {
@@ -40,8 +45,13 @@ input[type="button"] {
   background-color: white;
   cursor: pointer;
   font-size: 2em;
-       
+  box-shadow: 10px 10px 20px grey;
 }
+
+input[type="button"]:hover {
+    box-shadow: 10px 10px 20px rgb(0, 0, 0);
+}
+
 
 .box {
     
@@ -53,5 +63,5 @@ input[type="button"] {
 }
 
 .active {
-    background-color: rgb(233, 233, 248);
+    background-color: var(--color);
 }

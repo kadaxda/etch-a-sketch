@@ -63,12 +63,11 @@
             deleteBoxes();
             createBoxes(num);
             document.documentElement.style.setProperty("--width", calcwidth(num));     
-            document.documentElement.style.setProperty("--height", calcwidth(num));     
+            document.documentElement.style.setProperty("--height", calcwidth(num));  
+            document.documentElement.style.setProperty("--color", randomcolor()) 
+             
             boxes = document.querySelectorAll(".box");
-            boxes.forEach((box) => {
-                box.style.width = "100px;";
-                box.style.height = "100px;";
-            })
+            
             boxes.forEach((box) => {
             box.addEventListener("mouseenter", () => {
                 box.classList.add("active");
@@ -79,10 +78,19 @@
         
 
         function calcwidth(num) {
-            return (480/(num))+"px";
+            return (352/(num))+"px";
+        }
+        function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
         }
         
-              
+        function randomcolor() {
+            let rnd = getRandomInt(360);
+            
+            return `hsl(${rnd}, 100%, 50%)`;
+        }
+
+       
         
 
 
